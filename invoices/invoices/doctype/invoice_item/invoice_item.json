@@ -1,0 +1,93 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "creation": "2025-09-30 18:07:26.592024",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "details_section",
+  "serial_number",
+  "item_code",
+  "item_name",
+  "column_break_fatv",
+  "rate",
+  "quantity",
+  "tax_section",
+  "invoice_taxes",
+  "column_break_ptnc",
+  "rate_taxes"
+ ],
+ "fields": [
+  {
+   "fieldname": "details_section",
+   "fieldtype": "Section Break",
+   "label": "Details"
+  },
+  {
+   "fieldname": "serial_number",
+   "fieldtype": "Link",
+   "label": "Serial No",
+   "options": "Serial No"
+  },
+  {
+   "fieldname": "item_code",
+   "fieldtype": "Link",
+   "label": "Item",
+   "options": "Item"
+  },
+  {
+   "fieldname": "item_name",
+   "fieldtype": "Data",
+   "label": "Item Name",
+   "options": "Item"
+  },
+  {
+   "fieldname": "column_break_fatv",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "rate",
+   "fieldtype": "Currency",
+   "label": "Rate"
+  },
+  {
+   "fieldname": "quantity",
+   "fieldtype": "Int",
+   "label": "Quantity"
+  },
+  {
+   "fieldname": "tax_section",
+   "fieldtype": "Section Break",
+   "label": "Tax"
+  },
+  {
+   "fieldname": "invoice_taxes",
+   "fieldtype": "Data",
+   "label": "Invoice Taxes"
+  },
+  {
+   "fieldname": "column_break_ptnc",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "rate_taxes",
+   "fieldtype": "Data",
+   "label": "Rate with Taxes"
+  }
+ ],
+ "grid_page_length": 50,
+ "index_web_pages_for_search": 1,
+ "istable": 1,
+ "links": [],
+ "modified": "2025-09-30 18:11:15.653333",
+ "modified_by": "Administrator",
+ "module": "Invoices",
+ "name": "Invoice Item",
+ "owner": "Administrator",
+ "permissions": [],
+ "row_format": "Dynamic",
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": []
+}
