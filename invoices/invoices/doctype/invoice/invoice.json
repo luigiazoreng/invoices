@@ -7,20 +7,23 @@
  "field_order": [
   "section_break_xrur",
   "operation_type",
+  "client_type",
   "freight_modality",
   "column_break_tutt",
-  "amended_from",
   "nf_ref_serie",
   "nf_ref_num",
   "nf_ref_access_key",
+  "nf_de_retorno",
   "section_break_goab",
   "client_name",
   "client_email",
+  "contribuinte_icms",
   "column_break_wxky",
   "client_phone",
   "client_id_number",
+  "inscricao_estadual",
   "produto_section",
-  "table_qmvd",
+  "invoices_table",
   "section_break_jxvl",
   "product_brand",
   "product_quantity",
@@ -40,7 +43,29 @@
   "section_break_ycvd",
   "total",
   "column_break_bjbb",
-  "total_tax"
+  "total_tax",
+  "endere\u00e7o_section",
+  "delivery_supervisor",
+  "delivery_cep",
+  "delivery_address",
+  "delivery_neighborhood",
+  "delivery_ibge",
+  "column_break_iwze",
+  "delivery_phone",
+  "delivery_state",
+  "city",
+  "delivery_number_address",
+  "delivery_complement",
+  "eventos_sefaz_section",
+  "invoice_id",
+  "invoice_serie",
+  "column_break_pbac",
+  "invoice_link",
+  "invoice_number",
+  "section_break_fpdy",
+  "errors_field",
+  "internal_tab",
+  "amended_from"
  ],
  "fields": [
   {
@@ -217,16 +242,142 @@
    "label": "Produto"
   },
   {
-   "fieldname": "table_qmvd",
+   "fieldname": "invoices_table",
    "fieldtype": "Table",
    "options": "Invoice Item"
+  },
+  {
+   "fieldname": "endere\u00e7o_section",
+   "fieldtype": "Section Break",
+   "label": "Endere\u00e7o"
+  },
+  {
+   "fieldname": "delivery_supervisor",
+   "fieldtype": "Data",
+   "label": "Respons\u00e1vel"
+  },
+  {
+   "fieldname": "delivery_cep",
+   "fieldtype": "Data",
+   "label": "CEP"
+  },
+  {
+   "fieldname": "delivery_address",
+   "fieldtype": "Data",
+   "label": "Endere\u00e7o"
+  },
+  {
+   "fieldname": "delivery_neighborhood",
+   "fieldtype": "Data",
+   "label": "Bairro"
+  },
+  {
+   "fieldname": "delivery_ibge",
+   "fieldtype": "Data",
+   "label": "IBGE"
+  },
+  {
+   "fieldname": "column_break_iwze",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "delivery_phone",
+   "fieldtype": "Phone",
+   "label": "Telefone de Contato"
+  },
+  {
+   "fieldname": "delivery_state",
+   "fieldtype": "Select",
+   "label": "Estado",
+   "options": "\nAC\nAL\nAM\nAP\nBA\nCE\nDF\nES\nGO\nMA\nMG\nMS\nMT\nPA\nPB\nPE\nPI\nPR\nRJ\nRN\nRO\nRR\nRS\nSC\nSE\nSP\nTO"
+  },
+  {
+   "fieldname": "city",
+   "fieldtype": "Data",
+   "label": "Cidade"
+  },
+  {
+   "fieldname": "delivery_number_address",
+   "fieldtype": "Data",
+   "label": "N\u00ba do Endere\u00e7o"
+  },
+  {
+   "fieldname": "delivery_complement",
+   "fieldtype": "Data",
+   "label": "Complemento"
+  },
+  {
+   "fieldname": "eventos_sefaz_section",
+   "fieldtype": "Section Break",
+   "label": "Eventos Sefaz"
+  },
+  {
+   "fieldname": "invoice_id",
+   "fieldtype": "Data",
+   "label": "Invoice ID"
+  },
+  {
+   "fieldname": "invoice_serie",
+   "fieldtype": "Data",
+   "label": "Invoice Serie"
+  },
+  {
+   "fieldname": "column_break_pbac",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "invoice_link",
+   "fieldtype": "Data",
+   "label": "Invoice Link"
+  },
+  {
+   "fieldname": "invoice_number",
+   "fieldtype": "Data",
+   "label": "Invoice Number"
+  },
+  {
+   "fieldname": "section_break_fpdy",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "errors_field",
+   "fieldtype": "Long Text",
+   "label": "Logs:"
+  },
+  {
+   "default": "0",
+   "fieldname": "nf_de_retorno",
+   "fieldtype": "Check",
+   "label": "NF de Retorno?"
+  },
+  {
+   "fieldname": "internal_tab",
+   "fieldtype": "Tab Break",
+   "label": "Internal"
+  },
+  {
+   "fieldname": "contribuinte_icms",
+   "fieldtype": "Select",
+   "label": "Contribuinte ICMS",
+   "options": "N\u00e3o Contribuinte\nContribuinte\nContribuinte Isento"
+  },
+  {
+   "fieldname": "inscricao_estadual",
+   "fieldtype": "Data",
+   "label": "Inscri\u00e7\u00e3o Estadual (IE)"
+  },
+  {
+   "fieldname": "client_type",
+   "fieldtype": "Select",
+   "label": "Tipo de Cliente",
+   "options": "\nPF\nPJ"
   }
  ],
  "grid_page_length": 50,
  "index_web_pages_for_search": 1,
  "is_submittable": 1,
  "links": [],
- "modified": "2025-09-30 18:11:26.124805",
+ "modified": "2025-10-02 16:26:27.231190",
  "modified_by": "Administrator",
  "module": "Invoices",
  "name": "Invoice",
