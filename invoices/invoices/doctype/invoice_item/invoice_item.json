@@ -13,6 +13,7 @@
   "column_break_fatv",
   "rate",
   "quantity",
+  "ncm",
   "tax_section",
   "invoice_taxes",
   "column_break_ptnc",
@@ -27,6 +28,8 @@
   {
    "fieldname": "serial_number",
    "fieldtype": "Link",
+   "in_list_view": 1,
+   "in_standard_filter": 1,
    "label": "Serial No",
    "options": "Serial No"
   },
@@ -37,8 +40,11 @@
    "options": "Item"
   },
   {
+   "columns": 2,
    "fieldname": "item_name",
    "fieldtype": "Data",
+   "in_list_view": 1,
+   "in_standard_filter": 1,
    "label": "Item Name",
    "options": "Item"
   },
@@ -49,11 +55,15 @@
   {
    "fieldname": "rate",
    "fieldtype": "Currency",
+   "in_list_view": 1,
+   "in_standard_filter": 1,
    "label": "Rate"
   },
   {
    "fieldname": "quantity",
    "fieldtype": "Int",
+   "in_list_view": 1,
+   "in_standard_filter": 1,
    "label": "Quantity"
   },
   {
@@ -74,13 +84,21 @@
    "fieldname": "rate_taxes",
    "fieldtype": "Data",
    "label": "Rate with Taxes"
+  },
+  {
+   "fieldname": "ncm",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "in_preview": 1,
+   "in_standard_filter": 1,
+   "label": "ncm"
   }
  ],
  "grid_page_length": 50,
  "index_web_pages_for_search": 1,
  "istable": 1,
  "links": [],
- "modified": "2025-09-30 18:11:15.653333",
+ "modified": "2025-10-02 16:30:11.845552",
  "modified_by": "Administrator",
  "module": "Invoices",
  "name": "Invoice Item",
