@@ -1,7 +1,7 @@
 {
   "compilerOptions": {
     "rootDir": "./ts",
-    "outDir": "./js",
+    "outDir": "../invoices/doctype/invoice",
     "module": "preserve",
     "target": "ESNext",
     "esModuleInterop": false,
@@ -13,7 +13,7 @@
       "@anygridtech/frappe-agt-types",
       "@anygridtech/frappe-types"
     ],
-    "sourceMap": true,
+    "sourceMap": false,
     "allowSyntheticDefaultImports": true,
     "noUncheckedIndexedAccess": true,
     "exactOptionalPropertyTypes": true,

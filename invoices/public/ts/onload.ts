@@ -1,6 +1,6 @@
 import {InvoiceItem, InvoicesDoc, InvoiceTaxesDoc} from "./types/invoice";
 import { FrappeForm } from "@anygridtech/frappe-types/client/frappe/core";
-import { Item } from "@anygridtech/frappe-types/doctype/erpnext/item";
+import { Item } from "@anygridtech/frappe-types/doctype/erpnext/Item";
 
 
 frappe.ui.form.on<InvoicesDoc>("Invoices", "onload", async (form) => {
@@ -169,9 +169,9 @@ function calcSimpleTaxes(value: number, tax: number){
   return (value * tax) / 100;
 }
 
-function difalCalc(baseCalc: number, aliquotaInternal: number, aliquotaInterState: number, icmsOrig: number): number {
-  const icmsIntState = aliquotaInterState / 100; //icms do estado de origem
-  const icmsInternal = aliquotaInternal / 100; //icms do estado de destino
-  const difal = (((baseCalc - icmsOrig) / (1 - icmsInternal)) * icmsInternal) - baseCalc * icmsIntState
-  return difal
-}
+// function difalCalc(baseCalc: number, aliquotaInternal: number, aliquotaInterState: number, icmsOrig: number): number {
+//   const icmsIntState = aliquotaInterState / 100; //icms do estado de origem
+//   const icmsInternal = aliquotaInternal / 100; //icms do estado de destino
+//   const difal = (((baseCalc - icmsOrig) / (1 - icmsInternal)) * icmsInternal) - baseCalc * icmsIntState
+//   return difal
+// }

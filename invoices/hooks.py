@@ -26,7 +26,7 @@ app_license = "mit"
 
 # include js, css files in header of desk.html
 # app_include_css = "/assets/invoices/css/invoices.css"
-# app_include_js = "/assets/invoices/js/invoices.js"
+app_include_js = ["/assets/invoices/js/onload.js"]
 
 # include js, css files in header of web template
 # web_include_css = "/assets/invoices/css/invoices.css"
@@ -40,12 +40,12 @@ app_license = "mit"
 # webform_include_css = {"doctype": "public/css/doctype.css"}
 
 # include js in page
-# page_js = {"page" : "public/js/file.js"}
+# page_js = {"page" : "public/js/onload.js"}
 
 # include js in doctype views
-# doctype_js = {"doctype" : "public/js/doctype.js"}
-# doctype_list_js = {"doctype" : "public/js/doctype_list.js"}
-# doctype_tree_js = {"doctype" : "public/js/doctype_tree.js"}
+# doctype_js = {"doctype" : "public/js/onload.js"}
+# doctype_list_js = {"doctype" : "invoices/invoices/public/js/doctype_list.js"}
+# doctype_tree_js = {"doctype" : "invoices/invoices/public/js/doctype_tree.js"}
 # doctype_calendar_js = {"doctype" : "public/js/doctype_calendar.js"}
 
 # Svg Icons
