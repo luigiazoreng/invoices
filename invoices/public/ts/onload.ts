@@ -1,4 +1,6 @@
-import {InvoicesDoc} from "./interfaces/type";
+import {InvoiceItem, InvoicesDoc, InvoiceTaxesDoc} from "./types/invoice";
+import { FrappeForm } from "@anygridtech/frappe-types/client/frappe/core";
+import { Item } from "@anygridtech/frappe-types/doctype/erpnext/item";
 
 
 frappe.ui.form.on<InvoicesDoc>("Invoices", "onload", async (form) => {
@@ -62,13 +64,13 @@ frappe.ui.form.on<InvoicesDoc>("WA Invoice Item", {
             row.amount = row.amount ?? 1;
             row.rate = item.valuation_rate ?? 0;
             row.rate_taxes = item.valuation_rate ?? 0;
-            row.ncm = item.custom_custom_ncm;
-            row.package_length = item.custom_custom_package_length;
-            row.package_width = item.custom_custom_package_width;
-            row.package_height = item.custom_custom_package_height;
-            row.grossweight = item.weight_per_unit;
-            row.netweight = item.weight_per_unit;
-            row.description = item.description;
+            // row.ncm = item.custom_custom_ncm;
+            // row.package_length = item.custom_custom_package_length;
+            // row.package_width = item.custom_custom_package_width;
+            // row.package_height = item.custom_custom_package_height;
+            // row.grossweight = item.weight_per_unit;
+            // row.netweight = item.weight_per_unit;
+            // row.description = item.description;
             frm.refresh_field("items");
             sumTotalItems(frm);
           }
@@ -92,10 +94,10 @@ frappe.ui.form.on<InvoicesDoc>("WA Invoice Item", {
       console.error("Failed to calculate taxes");
       return;
     }
-    row.ipi = taxes.ipi;
-    row.icms = taxes.icms;
-    row.pis = taxes.pis;
-    row.cofins = taxes.cofins;
+    // row.ipi = taxes.ipi;
+    // row.icms = taxes.icms;
+    // row.pis = taxes.pis;
+    // row.cofins = taxes.cofins;
     row.rate_taxes = (taxes.ipi + taxes.icms + taxes.pis + taxes.cofins) + row.rate;
     frm.refresh_field("items");
     sumTotalItems(frm);

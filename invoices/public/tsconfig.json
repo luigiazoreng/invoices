@@ -14,6 +14,7 @@
       "@anygridtech/frappe-types"
     ],
     "sourceMap": true,
+    "allowSyntheticDefaultImports": true,
     "noUncheckedIndexedAccess": true,
     "exactOptionalPropertyTypes": true,
     "noImplicitReturns": true,

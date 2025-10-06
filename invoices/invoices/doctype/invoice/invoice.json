@@ -1,6 +1,7 @@
 {
  "actions": [],
  "allow_rename": 1,
+ "autoname": "format:INV-{YYYY}-{#####}",
  "creation": "2025-09-30 12:42:47.151809",
  "doctype": "DocType",
  "engine": "InnoDB",
@@ -377,10 +378,11 @@
  "index_web_pages_for_search": 1,
  "is_submittable": 1,
  "links": [],
- "modified": "2025-10-02 16:26:27.231190",
+ "modified": "2025-10-06 11:56:18.881146",
  "modified_by": "Administrator",
  "module": "Invoices",
  "name": "Invoice",
+ "naming_rule": "Expression",
  "owner": "Administrator",
  "permissions": [
   {

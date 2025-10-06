@@ -1,4 +1,6 @@
-interface InvoicesDoc {
+import { FrappeDoc } from "@anygridtech/frappe-types/client/frappe/core";
+
+export interface InvoicesDoc extends FrappeDoc {
   operation_nature?: string;
   carrier?: string;
   modalidade_de_frete?: string;
@@ -37,7 +39,7 @@ interface InvoicesDoc {
   amended_from?: string;
 }
 
-interface InvoiceTaxesDoc extends FrappeDoc {
+export interface InvoiceTaxesDoc extends FrappeDoc {
   base_calc_icms_fcp: number;
   icms_value_fcp: number;
   icms_value: number;
@@ -89,7 +91,7 @@ interface InvoiceTaxesDoc extends FrappeDoc {
   interstate_icms: number;
   standard_icms: number;
 }
-interface InvoiceItem extends FrappeDoc {
+export interface InvoiceItem  extends FrappeDoc {
   name: string;
   docstatus: number;
   idx: number;
