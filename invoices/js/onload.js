@@ -1,15 +1,19 @@
-frappe.ui.form.on("Invoices", "onload", async (form) => {
-    const operationNatureToNamingSeries = {
-        "Retorno de Remessa para Conserto": "INV-WRN-RR-.YYYY.-",
-        "Remessa para Conserto": "INV-WRN-RE-.YYYY.-",
-        "Retorno de Troca em Garantia": "INV-WRN-TR-.YYYY.-",
-        "Troca em Garantia": "INV-WRN-TE-.YYYY.-",
-        Bonificação: "INV-WRN-BE-.YYYY.-",
-        "Devolução de Mercadoria de Bonificação": "INV-WRN-BR-.YYYY.-",
-    };
-    form.set_df_property("naming_series", "options", Object.values(operationNatureToNamingSeries));
+frappe.ui.form.on("Invoice", "before_save", async (form) => {
+    var clientType = form.doc.client_type;
+    if (clientType === "PF") {
+        if (!cpfValid(form.doc.client_id_number || "")) {
+            frappe.msgprint("CPF Inválido");
+            frappe.validated = false;
+        }
+    }
+    if (clientType === "PJ") {
+        if (!form.doc.client_id_number || form.doc.client_id_number.length != 14) {
+            frappe.msgprint("CNPJ Inválido");
+            frappe.validated = false;
+        }
+    }
 });
-frappe.ui.form.on("WA Invoice Item", {
+frappe.ui.form.on("Invoice Item", {
     refresh: function (frm) {
         sumTotalItems(frm);
     },
@@ -126,6 +130,30 @@ async function taxescalc(name, InvoiceItem) {
     console.log("Aliquotas: Ipi: %d, Icms: %d, Pis: %d, Cofins: %d", ipi, icms, pis, cofins);
     console.log({ ipi, icms, pis, cofins });
     return { ipi, icms, pis, cofins };
+}
+function cpfValid(strCPF) {
+    var Soma;
+    var Resto;
+    Soma = 0;
+    var i;
+    if (strCPF == "00000000000")
+        return false;
+    for (i = 1; i <= 9; i++)
+        Soma = Soma + parseInt(strCPF.substring(i - 1, i)) * (11 - i);
+    Resto = (Soma * 10) % 11;
+    if ((Resto == 10) || (Resto == 11))
+        Resto = 0;
+    if (Resto != parseInt(strCPF.substring(9, 10)))
+        return false;
+    Soma = 0;
+    for (i = 1; i <= 10; i++)
+        Soma = Soma + parseInt(strCPF.substring(i - 1, i)) * (12 - i);
+    Resto = (Soma * 10) % 11;
+    if ((Resto == 10) || (Resto == 11))
+        Resto = 0;
+    if (Resto != parseInt(strCPF.substring(10, 11)))
+        return false;
+    return true;
 }
 function calcSimpleTaxes(value, tax) {
     return (value * tax) / 100;

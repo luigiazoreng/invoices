@@ -14,8 +14,7 @@ export interface InvoicesDoc extends FrappeDoc {
   nome?: string;
   email?: string;
   telefone?: string;
-  cpf?: string;
-  cnpj?: string;
+  client_id_number?: string; // CPF/CNPJ
   items_section?: string;
   scan_barcode?: string;
   invoice_id?: string;

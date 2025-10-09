@@ -1,7 +1,7 @@
 {
   "compilerOptions": {
     "rootDir": "./ts",
-    "outDir": "../invoices/doctype/invoice",
+    "outDir": "../js",
     "module": "preserve",
     "target": "ESNext",
     "esModuleInterop": false,
