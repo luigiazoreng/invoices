@@ -24,6 +24,7 @@
   "client_id_number",
   "inscricao_estadual",
   "produto_section",
+  "tax_template",
   "invoices_table",
   "section_break_jxvl",
   "product_brand",
@@ -372,13 +373,19 @@
    "fieldtype": "Select",
    "label": "Tipo de Cliente",
    "options": "\nPF\nPJ"
+  },
+  {
+   "fieldname": "tax_template",
+   "fieldtype": "Link",
+   "label": "Tax Template",
+   "options": "Taxes"
   }
  ],
  "grid_page_length": 50,
  "index_web_pages_for_search": 1,
  "is_submittable": 1,
  "links": [],
- "modified": "2025-10-06 11:56:18.881146",
+ "modified": "2025-10-14 11:52:22.462540",
  "modified_by": "Administrator",
  "module": "Invoices",
  "name": "Invoice",
