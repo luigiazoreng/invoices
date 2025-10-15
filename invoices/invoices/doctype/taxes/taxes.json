@@ -1,6 +1,7 @@
 {
  "actions": [],
  "allow_rename": 1,
+ "autoname": "format:TAX-{YYYY}-{#####}",
  "creation": "2025-10-10 17:22:14.678461",
  "doctype": "DocType",
  "engine": "InnoDB",
@@ -428,10 +429,11 @@
  "index_web_pages_for_search": 1,
  "is_submittable": 1,
  "links": [],
- "modified": "2025-10-15 17:32:21.546879",
+ "modified": "2025-10-15 17:45:52.227228",
  "modified_by": "Administrator",
  "module": "Invoices",
  "name": "Taxes",
+ "naming_rule": "Expression",
  "owner": "Administrator",
  "permissions": [
   {
